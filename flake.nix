@@ -4,8 +4,6 @@
 
     systems.url = "github:nix-systems/default";
 
-    flake-root.url = "github:srid/flake-root";
-
     parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -38,15 +36,12 @@
     inputs@{
       parts,
       systems,
-      flake-root,
       uv2nix,
       pyproject-nix,
       pyproject-build-systems,
       ...
     }:
     parts.lib.mkFlake { inherit inputs; } {
-      imports = [ flake-root.flakeModule ];
-
       systems = import systems;
 
       perSystem =
@@ -65,13 +60,11 @@
           mkVenv = python: deps: python.mkVirtualEnv "erp-venv" deps;
         in
         {
-          flake-root.projectRootFile = "flake.nix";
-
           packages.default = mkVenv python workspace.deps.default;
 
           devShells.default =
             let
-              editableOverlay = workspace.mkEditablePyprojectOverlay { root = "$FLAKE_ROOT"; };
+              editableOverlay = workspace.mkEditablePyprojectOverlay { root = "$REPO_ROOT"; };
               editablePython = python.overrideScope editableOverlay;
               venv = mkVenv editablePython workspace.deps.all;
             in
@@ -82,8 +75,10 @@
               ];
 
               shellHook = ''
-                unset PYTHONPATH
+                # unset PYTHONPATH
+                export REPO_ROOT=$(${pkgs.lib.getExe pkgs.git} rev-parse --show-toplevel)
                 export UV_PYTHON_DOWNLOADS=never
+                export UV_PYTHON_PREFERENCE=only-system
                 export UV_NO_SYNC=1
               '';
             };
