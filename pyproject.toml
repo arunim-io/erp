@@ -1,0 +1,9 @@
+[project]
+name = "erp"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Mugdha Arunim Ahmed", email = "mugdhaarunimahmed2017@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
