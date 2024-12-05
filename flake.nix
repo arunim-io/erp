@@ -75,11 +75,12 @@
               ];
 
               shellHook = ''
-                # unset PYTHONPATH
+                unset PYTHONPATH
                 export REPO_ROOT=$(${pkgs.lib.getExe pkgs.git} rev-parse --show-toplevel)
                 export UV_PYTHON_DOWNLOADS=never
                 export UV_PYTHON_PREFERENCE=only-system
                 export UV_NO_SYNC=1
+                export UV_PROJECT_ENVIRONMENT=${venv}
               '';
             };
         };
