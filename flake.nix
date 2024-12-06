@@ -82,6 +82,8 @@
                 export UV_PYTHON_PREFERENCE=only-system
                 export UV_NO_SYNC=1
                 export UV_PROJECT_ENVIRONMENT=${venv}
+
+                source "${venv}/bin/activate"
               '';
             };
         };
