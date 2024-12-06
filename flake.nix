@@ -72,6 +72,7 @@
               packages = with pkgs; [
                 uv
                 venv
+                just
               ];
 
               shellHook = ''
