@@ -21,12 +21,14 @@ update:
 
 # check for errors
 check: lint
-    {{ exe }} check
+    -{{ exe }} check
 
 # format code
 fmt:
     uv run ruff format
+    uv run taplo format
 
 # lint code
 lint:
-    uv run ruff check
+    -uv run ruff check
+    -uv run taplo lint
