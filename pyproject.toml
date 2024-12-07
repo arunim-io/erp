@@ -1,22 +1,20 @@
 [project]
 name = "erp"
-version = "0.1.0"
+version = "0.1-dev"
 requires-python = ">=3.12"
-dependencies = ["django>=5.1.4"]
+dependencies = ["django-allauth[mfa]>=65.3.0", "django>=5.1.4"]
 
 [[project.authors]]
 name = "Mugdha Arunim Ahmed"
 email = "mugdhaarunimahmed2017@gmail.com"
 
 [dependency-groups]
-dev = [
-  "ruff>=0.8.1",
-  "taplo>=0.9.3",
-  { include-group = "typing" },
-  { include-group = "test" },
-]
+dev = ["ruff>=0.8.1", "taplo>=0.9.3"]
 typing = ["django-stubs[compatible-mypy]>=5.1.1", "mypy>=1.13.0"]
 test = ["pytest>=8.3.4", "pytest-cov>=6.0.0", "pytest-django>=4.9.0"]
+
+[tool.uv]
+default-groups = ["dev", "typing", "test"]
 
 [tool.basedpyright]
 typeCheckingMode = "basic"
