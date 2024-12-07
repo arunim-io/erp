@@ -22,21 +22,17 @@
       perSystem =
         { pkgs, ... }:
         {
-
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
               python313
               uv
+              ruff
+              taplo
+              mypy
               just
             ];
 
-            shellHook = ''
-              export UV_PYTHON_PREFERENCE=only-system
-
-              [ ! -d "./.venv" ] && uv venv
-
-              source "./.venv/bin/activate"
-            '';
+            UV_PYTHON_PREFERENCE = "only-system";
           };
         };
     };

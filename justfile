@@ -29,10 +29,10 @@ check: lint
 
 # format code
 fmt:
-    uv run ruff format
-    uv run taplo format
+    ruff format
+    taplo format
 
 # lint code
 lint:
-    -uv run ruff check
-    -uv run taplo lint
+    -ruff check
+    -taplo lint
