@@ -14,7 +14,9 @@ name = "Mugdha Arunim Ahmed"
 email = "mugdhaarunimahmed2017@gmail.com"
 
 [dependency-groups]
-dev = []
+dev = [
+    "django-extensions>=3.2.3",
+]
 typing = ["django-stubs[compatible-mypy]>=5.1.1", "mypy>=1.13.0"]
 test = ["pytest>=8.3.4", "pytest-cov>=6.0.0", "pytest-django>=4.9.0"]
 
