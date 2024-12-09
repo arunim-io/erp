@@ -20,19 +20,25 @@
       systems = import systems;
 
       perSystem =
-        { pkgs, ... }:
+        { pkgs, config, ... }:
         {
-          devShells.default = pkgs.mkShell {
-            packages = with pkgs; [
-              python313
-              uv
-              ruff
-              taplo
-              mypy
-              just
-            ];
+          devShells = {
+            default = pkgs.mkShell {
+              packages = with pkgs; [ just ];
+            };
 
-            UV_PYTHON_PREFERENCE = "only-system";
+            api = pkgs.mkShell {
+              inputsFrom = [ config.devShells.default ];
+              packages = with pkgs; [
+                python313
+                uv
+                ruff
+                taplo
+                mypy
+              ];
+
+              UV_PYTHON_PREFERENCE = "only-system";
+            };
           };
         };
     };
