@@ -39,6 +39,14 @@
 
               UV_PYTHON_PREFERENCE = "only-system";
             };
+
+            web = pkgs.mkShell {
+              inputsFrom = [ config.devShells.default ];
+              packages = with pkgs; [
+                nodejs_latest
+                pnpm
+              ];
+            };
           };
         };
     };
