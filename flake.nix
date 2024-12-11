@@ -43,7 +43,7 @@
             web = pkgs.mkShell {
               inputsFrom = [ config.devShells.default ];
               packages = with pkgs; [
-                nodejs_latest
+                nodejs
                 pnpm
               ];
             };
