@@ -1,7 +1,53 @@
 ---
+import { z } from "astro/zod";
 import Layout from "../layouts/Layout.astro";
+
+const loginFormSchema = z.object({
+  email: z.string().email(),
+  password: z.string(),
+});
+
+let isLoggedIn = false;
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const result = await loginFormSchema.safeParseAsync(Object.fromEntries(data.entries()));
+    if (!result.success) {
+      console.error(result.error);
+    }
+    isLoggedIn = true;
+    console.log(result.data);
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error);
+    }
+  }
+}
 ---
 
 <Layout>
-  <h1>Hello, World!</h1>
+  <h1>
+    Status: {isLoggedIn ? <span class="text-green-5">Logged In</span> : <span class="text-red-5">Not Logged In</span>}
+  </h1>
+  {
+    isLoggedIn ? (
+      <button>Log out</button>
+    ) : (
+      <form method="post" class="space-y-sm">
+        <h1>Login Form</h1>
+        <div class="flex flex-col space-y-sm">
+          <label for="email">
+            Email Address:
+            <input type="text" id="email" name="email" required />
+          </label>
+          <label for="password">
+            Password:
+            <input type="password" id="password" name="password" required />
+          </label>
+        </div>
+        <button type="submit">Sign In</button>
+      </form>
+    )
+  }
 </Layout>

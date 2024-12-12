@@ -1,12 +1,24 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"main"> {
+  pageTitle?: string;
+}
+
+const { pageTitle = "ERP", ...props } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <slot />
+    <main {...props}>
+      <slot />
+    </main>
   </body>
 </html>
