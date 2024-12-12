@@ -1,26 +1,29 @@
 ---
 import { z } from "astro/zod";
 import Layout from "../layouts/Layout.astro";
+import { $isLoggedIn } from "../stores";
 
 const loginFormSchema = z.object({
   email: z.string().email(),
   password: z.string(),
 });
 
-let isLoggedIn = false;
-
 if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const result = await loginFormSchema.safeParseAsync(Object.fromEntries(data.entries()));
-    if (!result.success) {
-      console.error(result.error);
-    }
-    isLoggedIn = true;
-    console.log(result.data);
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error);
+  if ($isLoggedIn.get()) {
+    $isLoggedIn.set(false);
+  } else {
+    try {
+      const data = await Astro.request.formData();
+      const result = await loginFormSchema.safeParseAsync(Object.fromEntries(data.entries()));
+      if (!result.success) {
+        console.error(result.error);
+      }
+      $isLoggedIn.set(true);
+      console.log(result.data);
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error);
+      }
     }
   }
 }
@@ -28,11 +31,15 @@ if (Astro.request.method === "POST") {
 
 <Layout>
   <h1>
-    Status: {isLoggedIn ? <span class="text-green-5">Logged In</span> : <span class="text-red-5">Not Logged In</span>}
+    Status: {
+      $isLoggedIn.get() ? <span class="text-green-5">Logged In</span> : <span class="text-red-5">Not Logged In</span>
+    }
   </h1>
   {
-    isLoggedIn ? (
-      <button>Log out</button>
+    $isLoggedIn.get() ? (
+      <form method="post">
+        <button>Log out</button>
+      </form>
     ) : (
       <form method="post" class="space-y-sm">
         <h1>Login Form</h1>
