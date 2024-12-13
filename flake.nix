@@ -23,9 +23,7 @@
         { pkgs, config, ... }:
         {
           devShells = {
-            default = pkgs.mkShell {
-              packages = with pkgs; [ just ];
-            };
+            default = pkgs.mkShell { };
 
             api = pkgs.mkShell {
               inputsFrom = [ config.devShells.default ];
