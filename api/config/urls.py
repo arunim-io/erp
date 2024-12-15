@@ -22,6 +22,5 @@ from config.api import api
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("accounts/", include("allauth.urls")),
     path("api/v0/", api.urls),
 ]

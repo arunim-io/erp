@@ -39,9 +39,8 @@ INSTALLED_APPS = [
     "daphne",
     "django.contrib.staticfiles",
     "django.contrib.sites",
-    "allauth",
-    "allauth.account",
     DEBUG and "django_extensions",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -53,7 +52,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sites.middleware.CurrentSiteMiddleware",
-    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -133,7 +131,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 SITE_ID = 1
 
-AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
-]
+AUTH_USER_MODEL = "accounts.User"
