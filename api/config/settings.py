@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     DEBUG and "django_extensions",
+    "corsheaders",
     "accounts",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -132,3 +134,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 SITE_ID = 1
 
 AUTH_USER_MODEL = "accounts.User"
+
+CORS_ALLOW_ALL_ORIGINS = DEBUG
