@@ -1,9 +1,12 @@
-from django.http import HttpRequest
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 from ninja import NinjaAPI
 
-api = NinjaAPI()
+api = NinjaAPI(csrf=True)
 
 
-@api.get("/hello")
-def hello(request: HttpRequest):
-    return "Hello!"
+@api.get("/csrf")
+@ensure_csrf_cookie
+@csrf_exempt
+def get_csrf_token():
+    return HttpResponse()
