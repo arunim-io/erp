@@ -11,7 +11,7 @@
     "fmt": "eslint . --fix"
   },
   "dependencies": {
-    "astro": "^5.0.5",
+    "astro": "^5.0.8",
     "ky": "^1.7.3",
     "nanostores": "^0.11.3"
   },
