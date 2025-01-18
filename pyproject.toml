@@ -9,12 +9,7 @@ name = "Mugdha Arunim Ahmed"
 email = "mugdhaarunimahmed2017@gmail.com"
 
 [dependency-groups]
-dev = [
-  "ruff>=0.8.1",
-  "taplo>=0.9.3",
-  { include-group = "typing" },
-  { include-group = "test" },
-]
+dev = [{ include-group = "typing" }, { include-group = "test" }]
 typing = ["django-stubs[compatible-mypy]>=5.1.1", "mypy>=1.13.0"]
 test = ["pytest>=8.3.4", "pytest-cov>=6.0.0", "pytest-django>=4.9.0"]
 

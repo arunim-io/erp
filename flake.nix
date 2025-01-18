@@ -28,6 +28,8 @@
               python313
               uv
               just
+              ruff
+              taplo
             ];
 
             shellHook = ''
