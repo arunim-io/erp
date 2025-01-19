@@ -30,6 +30,7 @@
               just
               ruff
               taplo
+              bun
             ];
 
             shellHook = ''

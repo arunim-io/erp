@@ -2,7 +2,10 @@
 name = "erp"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = ["django>=5.1.4"]
+dependencies = [
+    "django>=5.1.4",
+    "django-vite>=3.0.6",
+]
 
 [[project.authors]]
 name = "Mugdha Arunim Ahmed"
