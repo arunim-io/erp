@@ -1,5 +1,6 @@
 import { createInertiaApp } from "@inertiajs/svelte";
 import { mount } from "svelte";
+import "./index.css";
 
 createInertiaApp({
   resolve(name) {
