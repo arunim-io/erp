@@ -1,5 +1,3 @@
-exe := 'uv run manage.py'
-
 default:
     @just --choose
 
@@ -9,23 +7,25 @@ clean:
 
 # run django commmands
 run *args:
-  {{ exe }} {{ args }}
+  uv run manage.py {{ args }}
 
 # run the dev server
 dev:
-  {{ exe }} runserver
+  just run runserver
 
 # install packages
 install:
   uv sync
+  bun install
 
 # update packages
 update:
   uv sync -U
+  bun update
 
 # check for errors
 check: lint
-  -{{ exe }} check
+  -just run check
 
 # format code
 fmt:
