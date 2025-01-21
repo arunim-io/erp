@@ -31,8 +31,10 @@ check: lint
 fmt:
   uv run ruff format
   uv run taplo format
+  bun fmt
 
 # lint code
 lint:
   -uv run ruff check
   -uv run taplo lint
+  -bun lint
