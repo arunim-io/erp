@@ -11,7 +11,9 @@ run *args:
 
 # run the dev server
 dev:
+  #!/usr/bin/env -S parallel --shebang --ungroup --jobs {{ num_cpus() }}
   just run runserver
+  bun dev
 
 # install packages
 install:
