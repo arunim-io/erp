@@ -9,6 +9,7 @@ createInertiaApp({
     return pages[`./pages/${name}.svelte`] as ResolvedComponent;
   },
   setup({ el, App, props }) {
-    if (el != null) mount(App, { target: el, props });
+    if (el != null)
+      mount(App, { target: el, props });
   },
 });

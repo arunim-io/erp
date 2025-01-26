@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "./static/src",
+    "baseUrl": "./static/src/",
     "paths": {
-      "@lib": ["lib"],
-      "@lib/*": ["lib/*"]
+      "$lib": ["lib"],
+      "$lib/*": ["lib/*"]
     }
   },
   "references": [
