@@ -1,12 +1,12 @@
 import { resolve } from "node:path";
 import { svelte, vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
-    svelte({
-      preprocess: vitePreprocess(),
-    }),
+    svelte({ preprocess: vitePreprocess() }),
+    tsconfigPaths(),
   ],
   base: "/static/",
   root: resolve("./static/src"),
