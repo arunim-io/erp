@@ -5,7 +5,16 @@
     "target": "ESNext",
     "moduleDetection": "force",
     "useDefineForClassFields": true,
+    "baseUrl": "./static/src/",
     "module": "ESNext",
+    "paths": {
+      "$lib": [
+        "lib"
+      ],
+      "$lib/*": [
+        "lib/*"
+      ]
+    },
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": true,
