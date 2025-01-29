@@ -1,9 +1,10 @@
 import { resolve } from "node:path";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
+import Icons from "unplugin-icons/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [svelte()],
+  plugins: [svelte(), Icons({ autoInstall: true, compiler: "svelte" })],
   resolve: {
     alias: {
       $lib: resolve("./static/src/lib"),
