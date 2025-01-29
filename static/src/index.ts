@@ -1,15 +1,17 @@
-import { createInertiaApp, type ResolvedComponent } from "@inertiajs/svelte";
+import type { ResolvedComponent } from "@inertiajs/svelte";
+import { createInertiaApp } from "@inertiajs/svelte";
 import { mount } from "svelte";
 import "./index.css";
 
 createInertiaApp({
-  resolve(name) {
-    const pages = import.meta.glob("./pages/**/*.svelte", { eager: true });
+  async resolve(name) {
+    const pages = import.meta.glob("./pages/**/*.svelte");
 
-    return pages[`./pages/${name}.svelte`] as ResolvedComponent;
+    return await pages[`./pages/${name}.svelte`]() as ResolvedComponent;
   },
   setup({ el, App, props }) {
-    if (el != null)
+    if (el != null) {
       mount(App, { target: el, props });
+    }
   },
 });
