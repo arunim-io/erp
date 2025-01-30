@@ -1,7 +1,9 @@
 <script>
+  import Header from "$lib/components/Header.svelte";
+
   const { children } = $props();
 </script>
 
-<header>Header</header>
+<Header />
 
 {@render children()}
