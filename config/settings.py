@@ -50,6 +50,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "inertia.middleware.InertiaMiddleware",
+    "config.middleware.inertia_share",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -128,6 +129,10 @@ STATICFILES_DIRS = []
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CSRF_HEADER_NAME = "HTTP_X_XSRF_TOKEN"
+CSRF_COOKIE_NAME = "XSRF-TOKEN"
+
 
 DJANGO_VITE_DEV_MODE = DEBUG
 
