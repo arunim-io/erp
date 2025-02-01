@@ -14,7 +14,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      $src: fileURLToPath(new URL("./src", import.meta.url)),
+      $src: fileURLToPath(new URL("./static/src", import.meta.url)),
     },
   },
   base: "/static/",
