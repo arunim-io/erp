@@ -1,3 +1,5 @@
+set windows-shell := ["pwsh", "-c"]
+
 default:
     @just --choose
 
