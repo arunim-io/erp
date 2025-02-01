@@ -1,4 +1,11 @@
 {
+  "compilerOptions": {
+    "paths": {
+      "$src/*": [
+        "./static/src/*"
+      ]
+    }
+  },
   "references": [
     {
       "path": "./tsconfig.node.json"
