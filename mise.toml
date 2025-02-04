@@ -3,9 +3,13 @@ taplo = "latest"
 uv = "latest"
 ruff = "latest"
 
+[tasks.dev]
+run = "uv run manage.py runserver"
+
+[env]
+'_'.file = ".env"
+ERP_DEBUG = true
+
 [settings]
 experimental = true
 python.uv_venv_auto = true
-
-[tasks.dev]
-run = "uv run manage.py runserver"
