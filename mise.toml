@@ -1,0 +1,11 @@
+[tools]
+taplo = "latest"
+uv = "latest"
+ruff = "latest"
+
+[settings]
+experimental = true
+python.uv_venv_auto = true
+
+[tasks.dev]
+run = "uv run manage.py runserver"

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "batisteo.vscode-django",
+    "monosans.djlint",
+    "tamasfe.even-better-toml",
+    "hverlin.mise-vscode",
+    "ms-python.python",
+    "charliermarsh.ruff"
+  ]
+}
