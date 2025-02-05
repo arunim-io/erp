@@ -2,6 +2,7 @@
 taplo = "latest"
 uv = "latest"
 ruff = "latest"
+"pipx:djlint/djlint" = "latest"
 
 [tasks.dev]
 run = "uv run manage.py runserver"
