@@ -3,6 +3,7 @@ taplo = "latest"
 uv = "latest"
 ruff = "latest"
 "pipx:djlint/djlint" = "latest"
+bun = "latest"
 
 [tasks.dev]
 run = "uv run manage.py runserver"
@@ -14,3 +15,4 @@ ERP_DEBUG = true
 [settings]
 experimental = true
 python.uv_venv_auto = true
+npm.bun = true
