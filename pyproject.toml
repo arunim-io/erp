@@ -7,4 +7,7 @@ requires-python = ">=3.13"
 dependencies = ["django>=5.1.5", "environs[django]>=14.1.0"]
 
 [dependency-groups]
-dev = ["djlint>=1.36.4"]
+dev = [
+    "django-browser-reload>=1.17.0",
+    "djlint>=1.36.4",
+]

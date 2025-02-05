@@ -72,8 +72,5 @@ ignore = [
 # provide the `--unsafe-fixes` flag when fixing.
 extend-unsafe-fixes = ["UP038"]
 
-[lint.isort]
-force-single-line = true
-
 [lint.per-file-ignores]
 "erp/settings.py" = ["E501"]

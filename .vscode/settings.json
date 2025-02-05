@@ -4,5 +4,11 @@
     "source.unusedImports": "explicit",
     "source.fixAll.ruff": "explicit",
     "source.organizeImports.ruff": "explicit"
+  },
+  "files.associations": {
+    "**/components/**/*.html": "django-html"
+  },
+  "emmet.includeLanguages": {
+    "django-html": "html"
   }
 }

@@ -4,12 +4,12 @@ uv = "latest"
 ruff = "latest"
 "pipx:djlint/djlint" = "latest"
 bun = "latest"
-
-[tasks.dev]
-run = "uv run manage.py runserver"
+"pipx:maturin" = "latest"
+cargo = "latest"
 
 [env]
-'_'.file = ".env"
+_.file = ".env"
+_.path = ['{{config_root}}/node_modules/.bin']
 ERP_DEBUG = true
 
 [settings]
