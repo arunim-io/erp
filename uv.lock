@@ -101,6 +101,18 @@ wheels = [
 ]
 
 [[package]]
+name = "django-cotton"
+version = "1.5.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9f/ef/c35798e1d402e012f93ac621cc33cb77064f5ef2dd4e1e482a8ec507ad5a/django_cotton-1.5.2.tar.gz", hash = "sha256:d4856bf8fbcca6680f84a44e9e72860d2ba4e5b3759f9a6ab5a865b21f350f7c", size = 21153 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/be/2c/952a12e8db2d41b0bb04239b720897cad60519166bf69079069e9a678642/django_cotton-1.5.2-py3-none-any.whl", hash = "sha256:118fdf905152b1118f0ca07eec82a134a99a3770d0dd0b907956d0dcfcecd933", size = 20797 },
+]
+
+[[package]]
 name = "djlint"
 version = "1.36.4"
 source = { registry = "https://pypi.org/simple" }
@@ -159,6 +171,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "django" },
+    { name = "django-cotton" },
     { name = "environs", extra = ["django"] },
 ]
 
@@ -171,6 +184,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "django", specifier = ">=5.1.5" },
+    { name = "django-cotton", specifier = ">=1.5.2" },
     { name = "environs", extras = ["django"], specifier = ">=14.1.0" },
 ]
 
