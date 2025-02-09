@@ -1,3 +1,8 @@
 <c-layouts.base title="Home">
 <h1>Hello, World!</h1>
+<h2>Username: {{ request.user.username }}</h2>
+<form action="{% url "logout" %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
 </c-layouts.base>
