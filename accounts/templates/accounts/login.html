@@ -2,7 +2,20 @@
     <h1>Login Page</h1>
     <form action="{% url "accounts:login" %}" method="post">
         {% csrf_token %}
-        {{ form }}
+        {% for field in form %}
+            <div>
+                {% if field.field.widget.input_type == 'checkbox' %}
+                    {{ field }}
+                    {{ field.label_tag }}
+                {% else %}
+                    {{ field.label_tag }}
+                    {{ field }}
+                {% endif %}
+                {# Display errors and help text #}
+                {% for error in field.errors %}<div class="error">{{ error }}</div>{% endfor %}
+                {% if field.help_text %}<div class="help-text">{{ field.help_text }}</div>{% endif %}
+            </div>
+        {% endfor %}
         <button type="submit">Login</button>
     </form>
 </c-layouts.base>
