@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_cotton",
+    "django_expr",
     "accounts",
 ]
 if DEBUG:
@@ -70,7 +71,7 @@ TEMPLATES = [
         "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
-            "builtins": ["django.templatetags.static"],
+            "builtins": ["django.templatetags.static", "django_expr.templatetags.expr"],
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
