@@ -2,8 +2,7 @@
 taplo = "latest"
 uv = "latest"
 ruff = "latest"
-"pipx:djlint/djlint" = "latest"
-bun = "latest"
+"pipx:djlint" = "latest"
 "pipx:maturin" = "latest"
 cargo = "latest"
 
@@ -15,4 +14,3 @@ ERP_DEBUG = true
 [settings]
 experimental = true
 python.uv_venv_auto = true
-npm.bun = true
