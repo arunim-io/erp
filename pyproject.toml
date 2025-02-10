@@ -8,6 +8,7 @@ dependencies = [
     "django>=5.1.5",
     "django-cotton>=1.5.2",
     "django-expr>=0.1.0",
+    "django-tailwind-cli>=4.0.1",
     "docutils>=0.21.2",
     "environs[django]>=14.1.0",
 ]

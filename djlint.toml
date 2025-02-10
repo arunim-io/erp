@@ -6,7 +6,7 @@ format_js = true
 # TODO: remove T002 when fixed https://github.com/djlint/djLint/issues/687
 ignore = "H006,H030,H031,T002"
 include = "H017,H035"
-indent = 2
+indent_size = 2
 max_line_length = 88
 profile = "django"
 

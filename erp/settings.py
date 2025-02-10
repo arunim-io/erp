@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_cotton",
     "django_expr",
+    "django_tailwind_cli",
     "accounts",
 ]
 if DEBUG:
@@ -71,7 +72,11 @@ TEMPLATES = [
         "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
-            "builtins": ["django.templatetags.static", "django_expr.templatetags.expr"],
+            "builtins": [
+                "django.templatetags.static",
+                "django_expr.templatetags.expr",
+                "django_tailwind_cli.templatetags.tailwind_cli",
+            ],
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
@@ -144,3 +149,6 @@ LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "login"
 
 COTTON_DIR = "components"
+
+TAILWIND_CLI_SRC_CSS = "src/main.css"
+TAILWIND_CLI_DIST_CSS = "css/main.gen.css"
