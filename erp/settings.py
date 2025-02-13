@@ -150,5 +150,5 @@ LOGOUT_REDIRECT_URL = "login"
 
 COTTON_DIR = "components"
 
-TAILWIND_CLI_SRC_CSS = "src/main.css"
-TAILWIND_CLI_DIST_CSS = "css/main.gen.css"
+TAILWIND_CLI_SRC_CSS = "css/main.css"
+TAILWIND_CLI_DIST_CSS = "dist/main.gen.css"

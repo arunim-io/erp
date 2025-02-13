@@ -5,6 +5,7 @@ ruff = "latest"
 "pipx:djlint" = "latest"
 "pipx:maturin" = "latest"
 cargo = "latest"
+bun = 'latest'
 
 [env]
 _.file = ".env"

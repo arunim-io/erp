@@ -10,5 +10,6 @@
   },
   "emmet.includeLanguages": {
     "django-html": "html"
-  }
+  },
+  "djangoCotton.templatePaths": ["templates/components"]
 }
