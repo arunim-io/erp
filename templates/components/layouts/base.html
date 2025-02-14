@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{ title }} - ERP</title>
         {% tailwind_css %}
+        <script src="{% url "js-catalog" %}"></script>
+        <link href="{% static 'formset/css/collections.css' %}" rel="stylesheet" />
+        <script type="module" src="{% static 'formset/js/django-formset.js' %}"></script>
     </head>
     <body>
         <main {{ attrs }}>

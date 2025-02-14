@@ -5,3 +5,15 @@
 @plugin "daisyui" {
     themes: light --default;
 }
+
+.formset-text-input,
+.formset-email-input,
+.formset-date-input,
+.formset-select,
+.formset-select-multiple,
+.formset-number-input,
+.formset-textarea,
+.formset-password-input,
+.formset-url-input {
+    @apply input;
+}

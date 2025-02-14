@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django_cotton",
     "django_expr",
     "django_tailwind_cli",
+    "formset",
     "accounts",
 ]
 if DEBUG:
@@ -76,6 +77,7 @@ TEMPLATES = [
                 "django.templatetags.static",
                 "django_expr.templatetags.expr",
                 "django_tailwind_cli.templatetags.tailwind_cli",
+                "formset.templatetags.formsetify",
             ],
             "context_processors": [
                 "django.template.context_processors.debug",
@@ -146,7 +148,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "login"
+LOGOUT_REDIRECT_URL = "accounts:login"
 
 COTTON_DIR = "components"
 

@@ -16,12 +16,24 @@ Including another URLconf
 """
 
 from django.contrib import admin
+from django.contrib.auth.decorators import login_not_required
 from django.urls import include, path
+from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
+from django.views.i18n import JavaScriptCatalog
+
+js_catalog = login_not_required(
+    cache_page(3600)(
+        JavaScriptCatalog.as_view(
+            packages=["formset"],
+        ),
+    ),
+)
 
 urlpatterns = [
     path("admin/docs/", include("django.contrib.admindocs.urls")),
     path("admin/", admin.site.urls),
+    path("jsi18n/", js_catalog, name="js-catalog"),
     path("__reload__/", include("django_browser_reload.urls")),
     path("accounts/", include("accounts.urls", namespace="accounts")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
