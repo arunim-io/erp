@@ -1,21 +1,10 @@
-<c-layouts.base title="Login">
-    <h1>Login Page</h1>
-    <form action="{% url "accounts:login" %}" method="post">
-        {% csrf_token %}
-        {% for field in form %}
-            <div>
-                {% if field.field.widget.input_type == 'checkbox' %}
-                    {{ field }}
-                    {{ field.label_tag }}
-                {% else %}
-                    {{ field.label_tag }}
-                    {{ field }}
-                {% endif %}
-                {# Display errors and help text #}
-                {% for error in field.errors %}<div class="error">{{ error }}</div>{% endfor %}
-                {% if field.help_text %}<div class="help-text">{{ field.help_text }}</div>{% endif %}
-            </div>
-        {% endfor %}
-        <button type="submit" class="btn">Login</button>
-    </form>
+<c-layouts.base title="Login" class="flex justify-center items-center min-h-screen">
+    <div class="space-y-5 p-10 border rounded-lg shadow-md bg-neutral-content/25">
+        <h1 class="text-center text-2xl font-bold">Login Page</h1>
+        <form action="{{ request.path }}" method="post" class="space-y-2.5">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-primary w-full">Login</button>
+        </form>
+    </div>
 </c-layouts.base>
