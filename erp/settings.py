@@ -50,9 +50,13 @@ INSTALLED_APPS = [
     "accounts",
 ]
 if DEBUG:
-    INSTALLED_APPS += ["django_browser_reload"]
+    INSTALLED_APPS += [
+        "debug_toolbar",
+        "django_browser_reload",
+    ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -145,6 +149,11 @@ STATICFILES_DIRS = [BASE_DIR / "static/"]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+INTERNAL_IPS = []
+
+if DEBUG:
+    INTERNAL_IPS += ["127.0.0.1"]
 
 LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "home"

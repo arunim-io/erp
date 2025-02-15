@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
 from django.contrib.auth.decorators import login_not_required
 from django.urls import include, path
@@ -37,4 +38,5 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path("accounts/", include("accounts.urls", namespace="accounts")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    *debug_toolbar_urls(),
 ]
