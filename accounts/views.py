@@ -3,7 +3,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_not_required
 from django.contrib.auth.views import RedirectURLMixin
 from django.contrib.sites.shortcuts import get_current_site
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import resolve_url
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
@@ -45,7 +45,7 @@ class LoginView(RedirectURLMixin, FormView):
 
     def form_valid(self, form: AuthForm):
         login(self.request, form.get_user())
-        return HttpResponseRedirect(self.get_success_url())
+        return JsonResponse({"success_url": self.get_success_url()})
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
