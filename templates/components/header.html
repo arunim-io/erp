@@ -1,0 +1,28 @@
+<header class="navbar">
+    <section class="navbar-start">
+        <button class="btn btn-ghost btn-circle">
+            <iconify-icon icon="material-symbols:menu" width="24" height="24">
+            </iconify-icon>
+        </button>
+    </section>
+    <section class="navbar-center">
+    </section>
+    <section class="navbar-end">
+        <details class="dropdown dropdown-end">
+            <summary class="btn btn-ghost rounded-xl!">
+                {{ request.user.username }}
+            </summary>
+            <ul class="dropdown-content menu rounded-sm bg-base-100 shadow-sm">
+                <li>
+                    <a href="#">Profile</a>
+                </li>
+                <li>
+                    <a href="#">Settings</a>
+                </li>
+                <li>
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
+        </details>
+    </section>
+</header>
