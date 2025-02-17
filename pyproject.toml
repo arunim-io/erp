@@ -10,16 +10,11 @@ dependencies = [
     "django-debug-toolbar>=5.0.1",
     "django-expr>=0.1.0",
     "django-formset>=1.7.2",
-    "django-tailwind-cli>=4.0.1",
+    "django-tailwind-cli>=4",
     "docutils>=0.21.2",
     "environs[django]>=14.1.0",
 ]
 
 [dependency-groups]
-dev = [
-    "django-browser-reload>=1.17.0",
-    "djlint>=1.36.4",
-]
-typings = [
-    "django-stubs>=5.1.3",
-]
+dev = ["django-browser-reload>=1.17.0", "djlint>=1.36.4"]
+typings = ["django-stubs>=5.1.3"]

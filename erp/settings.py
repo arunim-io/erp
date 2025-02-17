@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import sys
 from pathlib import Path
 
 from environs import Env
@@ -167,3 +168,7 @@ COTTON_DIR = "components"
 
 TAILWIND_CLI_SRC_CSS = "css/main.css"
 TAILWIND_CLI_DIST_CSS = "dist/main.gen.css"
+TAILWIND_CLI_PATH = (
+    BASE_DIR
+    / f"node_modules/.bin/{'tailwindcss.exe' if sys.platform == 'win32' else 'tailwindcss'}"
+)
