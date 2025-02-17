@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "django_tailwind_cli",
     "formset",
     "accounts",
+    "settings",
 ]
 if DEBUG:
     INSTALLED_APPS += [

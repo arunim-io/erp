@@ -38,5 +38,6 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path("accounts/", include("accounts.urls", namespace="accounts")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path("settings/", include("settings.urls", namespace="settings")),
     *debug_toolbar_urls(),
 ]
