@@ -44,18 +44,16 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_components",
     "django_cotton",
     "django_expr",
     "django_tailwind_cli",
     "formset",
+    "debug_toolbar",
+    "django_browser_reload",
     "accounts",
     "settings",
 ]
-if DEBUG:
-    INSTALLED_APPS += [
-        "debug_toolbar",
-        "django_browser_reload",
-    ]
 
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
@@ -69,6 +67,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     "django.contrib.admindocs.middleware.XViewMiddleware",
+    "django_components.middleware.ComponentDependencyMiddleware",
 ]
 
 ROOT_URLCONF = "erp.urls"
@@ -77,19 +76,29 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [BASE_DIR / "templates"],
-        "APP_DIRS": True,
         "OPTIONS": {
             "builtins": [
                 "django.templatetags.static",
                 "django_expr.templatetags.expr",
                 "django_tailwind_cli.templatetags.tailwind_cli",
                 "formset.templatetags.formsetify",
+                "django_components.templatetags.component_tags",
             ],
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+            ],
+            "loaders": [
+                (
+                    "django.template.loaders.cached.Loader",
+                    [
+                        "django.template.loaders.filesystem.Loader",
+                        "django.template.loaders.app_directories.Loader",
+                        "django_components.template_loader.Loader",
+                    ],
+                ),
             ],
         },
     },
@@ -142,6 +151,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django_components.finders.ComponentsFileSystemFinder",
+]
 
 STATIC_URL = "static/"
 

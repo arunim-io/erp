@@ -36,8 +36,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("jsi18n/", js_catalog, name="js-catalog"),
     path("__reload__/", include("django_browser_reload.urls")),
-    path("accounts/", include("accounts.urls", namespace="accounts")),
+    path("", include("django_components.urls")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path("accounts/", include("accounts.urls", namespace="accounts")),
     path("settings/", include("settings.urls", namespace="settings")),
     *debug_toolbar_urls(),
 ]
