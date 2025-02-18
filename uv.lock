@@ -137,14 +137,10 @@ wheels = [
 [[package]]
 name = "django-components"
 version = "0.129"
-source = { registry = "https://pypi.org/simple" }
+source = { git = "https://github.com/django-components/django-components#5535f3bad88da80f45ce63fc90fedeca50bb4db5" }
 dependencies = [
     { name = "django" },
     { name = "djc-core-html-parser" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/76/45/615a31b55070d2520bc23f3a6a035759f298e25188eecb5b25c545df4d0c/django_components-0.129.tar.gz", hash = "sha256:ac91642413e9cae23bd71c1473f192258a78a108b06de2a534d398b925f70eb2", size = 129476 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ee/3a/577ca5cebfb8dacf6854d4a00a661936f8b478205f7ac78f9fa3b4fed431/django_components-0.129-py3-none-any.whl", hash = "sha256:e28b4cb45caa782b814b09e934505d5ab2e421609df3770cd70bd357d1ad6d59", size = 143755 },
 ]
 
 [[package]]
@@ -365,7 +361,7 @@ typings = [
 [package.metadata]
 requires-dist = [
     { name = "django", specifier = ">=5.1.5" },
-    { name = "django-components", specifier = ">=0.129" },
+    { name = "django-components", git = "https://github.com/django-components/django-components" },
     { name = "django-cotton", specifier = ">=1.5.2" },
     { name = "django-debug-toolbar", specifier = ">=5.0.1" },
     { name = "django-expr", specifier = ">=0.1.0" },

@@ -1,0 +1,24 @@
+<aside class="menu bg-base-200 h-screen px-5 py-2.5 space-y-5">
+    <div class="flex justify-end">
+        <button class="btn btn-ghost btn-square tooltip" data-tip="Close sidebar">
+            <iconify-icon icon="mdi:arrow-collapse-left">
+            </iconify-icon>
+        </button>
+    </div>
+    <ul class="space-y-2.5">
+        <li>
+            <a href="{% url 'settings:user-info' %}" class="btn btn-primary">
+                <iconify-icon icon="mdi:user">
+                </iconify-icon>
+                Personal Information
+            </a>
+        </li>
+        <li>
+            <a href="#" class="btn btn-ghost">
+                <iconify-icon icon="mdi:security-account">
+                </iconify-icon>
+                Account Security
+            </a>
+        </li>
+    </ul>
+</aside>
