@@ -179,6 +179,10 @@ LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "accounts:login"
 
+COMPONENTS = {
+    "reload_on_file_change": True,
+}
+
 COTTON_DIR = "components"
 
 TAILWIND_CLI_SRC_CSS = "css/main.css"
