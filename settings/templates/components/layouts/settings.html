@@ -1,6 +1,6 @@
 <c-vars class="p-5" />
 <c-layouts.default class="flex">
-    {% component "sidebar" / %}
+    {% component "sidebar" request=request / %}
     <section class="{{ class }}" {{ attrs }}>
         {{ slot }}
     </section>
