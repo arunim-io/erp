@@ -3,8 +3,6 @@ taplo = "latest"
 uv = "latest"
 ruff = "latest"
 "pipx:djlint" = "latest"
-"pipx:maturin" = "latest"
-cargo = "latest"
 bun = 'latest'
 
 [env]
