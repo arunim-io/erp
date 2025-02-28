@@ -1,4 +1,5 @@
 version = 1
+revision = 1
 requires-python = ">=3.13"
 
 [[package]]
@@ -64,16 +65,16 @@ wheels = [
 
 [[package]]
 name = "cssbeautifier"
-version = "1.15.3"
+version = "1.15.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "editorconfig" },
     { name = "jsbeautifier" },
     { name = "six" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/40/0b/fcde8f7f07969ee4965ba443c5cb436988ee132bb7c1b4ddb4bd92bf4f90/cssbeautifier-1.15.3.tar.gz", hash = "sha256:406b04d09e7d62c0be084fbfa2cba5126fe37359ea0d8d9f7b963a6354fc8303", size = 25359 }
+sdist = { url = "https://files.pythonhosted.org/packages/f7/01/fdf41c1e5f93d359681976ba10410a04b299d248e28ecce1d4e88588dde4/cssbeautifier-1.15.4.tar.gz", hash = "sha256:9bb08dc3f64c101a01677f128acf01905914cf406baf87434dcde05b74c0acf5", size = 25376 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7b/5e/1173945ad452bc72600dd7605581f49d458b0fc8e9e165221c81a74b6316/cssbeautifier-1.15.3-py3-none-any.whl", hash = "sha256:0dcaf5ce197743a79b3a160b84ea58fcbd9e3e767c96df1171e428125b16d410", size = 123667 },
+    { url = "https://files.pythonhosted.org/packages/63/51/ef6c5628e46092f0a54c7cee69acc827adc6b6aab57b55d344fefbdf28f1/cssbeautifier-1.15.4-py3-none-any.whl", hash = "sha256:78c84d5e5378df7d08622bbd0477a1abdbd209680e95480bf22f12d5701efc98", size = 123667 },
 ]
 
 [[package]]
@@ -136,11 +137,15 @@ wheels = [
 
 [[package]]
 name = "django-components"
-version = "0.129"
-source = { git = "https://github.com/django-components/django-components#5535f3bad88da80f45ce63fc90fedeca50bb4db5" }
+version = "0.130"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
     { name = "djc-core-html-parser" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/41/4f/31ec6be24bbdffbcd2e8b1fe488a70f540fd95056a9e98d8a295faab06ec/django_components-0.130.tar.gz", hash = "sha256:8db7f74f5ff26cdecdc5fe93270cbf4bbe36022eaec5c230feed0a6c6a3ebc9c", size = 130892 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f2/c3/81c719f8521c98a01b3abe6188f2f0af86069a14eefc2a0df044eea91f13/django_components-0.130-py3-none-any.whl", hash = "sha256:37a84d31548c70c96a5dbc0d41eddf771567e1bc46183e8b000c02cd87ae79fc", size = 145377 },
 ]
 
 [[package]]
@@ -182,14 +187,14 @@ wheels = [
 
 [[package]]
 name = "django-formset"
-version = "1.7.2"
+version = "1.7.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4f/ee/b5d0066499564e306745cbfee7429410f338a9ce20e14dd9cc431de6480a/django_formset-1.7.2.tar.gz", hash = "sha256:0495256b9d1341113883de38c9fca3da0bc756e791972e6409c44f494a35274d", size = 794687 }
+sdist = { url = "https://files.pythonhosted.org/packages/d1/b7/9b77de04a90cc4c55341c731f5b6a5753718a2de2cf2fb439d960ce0b187/django_formset-1.7.3.tar.gz", hash = "sha256:cec009e7c5db6b7a00c9683c286c7c0cc2bdc8100b12b54656098e22cb310fd2", size = 794630 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/07/66/8db143c84897775ebfc5c7148b8c163a4c5205614061c369c8fb24d31ea5/django_formset-1.7.2-py3-none-any.whl", hash = "sha256:0d6f8df143342e35bd0f26083698c894ebb7f3509074a9e09ce447dc7e5b1fa6", size = 1106627 },
+    { url = "https://files.pythonhosted.org/packages/3e/88/6a8ce2407ea09c797d24a74a79debd3236c8030e7e7a0089646adbfbcb48/django_formset-1.7.3-py3-none-any.whl", hash = "sha256:d8b51284d04976e3624192fc58df31edf6ab60990dc9b2b53637d73e99abe3b5", size = 1106695 },
 ]
 
 [[package]]
@@ -341,18 +346,18 @@ dependencies = [
     { name = "django" },
     { name = "django-components" },
     { name = "django-cotton" },
-    { name = "django-debug-toolbar" },
     { name = "django-expr" },
     { name = "django-formset" },
     { name = "django-tailwind-cli" },
-    { name = "docutils" },
     { name = "environs", extra = ["django"] },
 ]
 
 [package.dev-dependencies]
 dev = [
     { name = "django-browser-reload" },
+    { name = "django-debug-toolbar" },
     { name = "djlint" },
+    { name = "docutils" },
     { name = "pywatchman" },
 ]
 typings = [
@@ -362,20 +367,20 @@ typings = [
 [package.metadata]
 requires-dist = [
     { name = "django", specifier = ">=5.1.5" },
-    { name = "django-components", git = "https://github.com/django-components/django-components" },
+    { name = "django-components", specifier = ">=0.129" },
     { name = "django-cotton", specifier = ">=1.5.2" },
-    { name = "django-debug-toolbar", specifier = ">=5.0.1" },
     { name = "django-expr", specifier = ">=0.1.0" },
     { name = "django-formset", specifier = ">=1.7.2" },
     { name = "django-tailwind-cli", specifier = ">=4" },
-    { name = "docutils", specifier = ">=0.21.2" },
     { name = "environs", extras = ["django"], specifier = ">=14.1.0" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "django-browser-reload", specifier = ">=1.17.0" },
+    { name = "django-debug-toolbar", specifier = ">=5.0.1" },
     { name = "djlint", specifier = ">=1.36.4" },
+    { name = "docutils", specifier = ">=0.21.2" },
     { name = "pywatchman", specifier = ">=2.0.0" },
 ]
 typings = [{ name = "django-stubs", specifier = ">=5.1.3" }]
@@ -391,15 +396,15 @@ wheels = [
 
 [[package]]
 name = "jsbeautifier"
-version = "1.15.3"
+version = "1.15.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "editorconfig" },
     { name = "six" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/cf/74/a37cc6fe8ab3f217657d345dfba0612758807536dca5ca5d2f6a81e3623d/jsbeautifier-1.15.3.tar.gz", hash = "sha256:5f1baf3d4ca6a615bb5417ee861b34b77609eeb12875555f8bbfabd9bf2f3457", size = 75261 }
+sdist = { url = "https://files.pythonhosted.org/packages/ea/98/d6cadf4d5a1c03b2136837a435682418c29fdeb66be137128544cecc5b7a/jsbeautifier-1.15.4.tar.gz", hash = "sha256:5bb18d9efb9331d825735fbc5360ee8f1aac5e52780042803943aa7f854f7592", size = 75257 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c5/09/cabdf2ed67ba8281ed2025e322c2fc9502a135f756c0a3a3eb60c12eb4fa/jsbeautifier-1.15.3-py3-none-any.whl", hash = "sha256:b207a15ab7529eee4a35ae7790e9ec4e32a2b5026d51e2d0386c3a65e6ecfc91", size = 94706 },
+    { url = "https://files.pythonhosted.org/packages/2d/14/1c65fccf8413d5f5c6e8425f84675169654395098000d8bddc4e9d3390e1/jsbeautifier-1.15.4-py3-none-any.whl", hash = "sha256:72f65de312a3f10900d7685557f84cb61a9733c50dcc27271a39f5b0051bf528", size = 94707 },
 ]
 
 [[package]]
@@ -561,15 +566,15 @@ wheels = [
 
 [[package]]
 name = "typer-slim"
-version = "0.15.1"
+version = "0.15.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f8/7d/f8e0a2678a44573b2bb1e20abecb10f937a7101ce2b8e07f4eab4c721a3d/typer_slim-0.15.1.tar.gz", hash = "sha256:b8ce8fd2a3c7d52f0d0c1318776e7f2bf897fa203daf899f3863514aa926c725", size = 99874 }
+sdist = { url = "https://files.pythonhosted.org/packages/29/67/88189eb827c491646511dc6c806e2e6e543241cae5438383aa042b1dfa40/typer_slim-0.15.2.tar.gz", hash = "sha256:4a666bb7839a88f51dd25d078d36dbc1d0f37c8c2696e184fbc1f3eaa314a91b", size = 100755 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1f/7b/032ecd581e2170513bb6dc3cdb2581e20fdb94a272bae70fe93f2bca580b/typer_slim-0.15.1-py3-none-any.whl", hash = "sha256:20233cb89938ea3cca633afee10b906a1b0e7c5330f31ed8c55f4f0779efe6df", size = 44968 },
+    { url = "https://files.pythonhosted.org/packages/9e/84/9b68e98bf7417d25e38b27a0296bfcbc6719b15d7000f4c09d9716fa9d11/typer_slim-0.15.2-py3-none-any.whl", hash = "sha256:4273014a3378b24367bffed45c2ce8dd3d85bd201a6f02e51ba6b19f336009be", size = 45117 },
 ]
 
 [[package]]
