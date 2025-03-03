@@ -23,3 +23,9 @@ dev = [
   "pywatchman>=2.0.0",
 ]
 typings = ["django-stubs>=5.1.3"]
+
+[tool.basedpyright]
+typeCheckingMode = "basic"
+venvPath = "."
+venv = ".venv"
+exclude = [".venv"]
