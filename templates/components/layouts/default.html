@@ -1,6 +1,8 @@
-<c-layouts.base>
-    <c-header />
-    <main {{ attrs }}>
-        {{ slot }}
-    </main>
+{# vim: set filetype=htmldjango #}
+<c-vars title />
+<c-layouts.base title="{{ title }}">
+  <c-header />
+  <main {{ attrs }}>
+    {{ slot }}
+  </main>
 </c-layouts.base>

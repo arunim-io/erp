@@ -1,7 +1,8 @@
-<c-vars class="p-5" />
-<c-layouts.default class="flex">
-    {% component "sidebar" request=request / %}
-    <section class="{{ class }}" {{ attrs }}>
-        {{ slot }}
-    </section>
+{# vim: set filetype=htmldjango #}
+<c-vars class="p-5" title />
+<c-layouts.default class="flex" title="{{ title }}">
+  {% component "sidebar" request=request / %}
+  <section class="{{ class }}" {{ attrs }}>
+    {{ slot }}
+  </section>
 </c-layouts.default>
