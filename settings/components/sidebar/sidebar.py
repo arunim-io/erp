@@ -16,5 +16,10 @@ class Sidebar(Component):
                     "icon_name": "mdi:user",
                     "url": reverse("settings:user-info"),
                 },
+                {
+                    "label": "Appearance",
+                    "icon_name": "mdi:paintbrush",
+                    "url": reverse("settings:appearance"),
+                },
             ],
         }
