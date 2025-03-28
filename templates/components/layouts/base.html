@@ -1,19 +1,16 @@
 <c-vars title />
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ title }} - ERP</title>
-        {% tailwind_css %}
-        <script src="{% url "js-catalog" %}"></script>
-        <link href="{% static 'formset/css/collections.css' %}" rel="stylesheet" />
-        <script type="module" src="{% static 'formset/js/django-formset.js' %}"></script>
-        <script defer src="{% static "node_modules/alpinejs/dist/cdn.min.js" %}"></script>
-    </head>
-    <body>
-        {{ slot }}
-        <script src="{% static "node_modules/iconify-icon/dist/iconify-icon.min.js" %}"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} - ERP</title>
+    {% tailwind_css %}
+    <script defer src="{% static "node_modules/alpinejs/dist/cdn.min.js" %}"></script>
+  </head>
+  <body>
+    {{ slot }}
+    <script src="{% static "node_modules/iconify-icon/dist/iconify-icon.min.js" %}"></script>
+  </body>
 </html>

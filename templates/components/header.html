@@ -1,27 +1,27 @@
 <header class="navbar bg-base-300">
-    <section class="navbar-start">
-    </section>
-    <section class="navbar-center">
-    </section>
-    <section class="navbar-end">
-        <details class="dropdown dropdown-end">
-            <summary class="btn btn-ghost rounded-xl!">
-                {{ request.user.username }}
-            </summary>
-            <ul class="dropdown-content menu rounded-sm bg-base-100 shadow-sm">
-                <li>
-                    <a href="#">Profile</a>
-                </li>
-                <li>
-                    <a href="{% url "settings:index" %}">Settings</a>
-                </li>
-                <li>
-                    <button onclick="logoutDialog.showModal()">
-                        Logout
-                    </button>
-                </li>
-            </ul>
-        </details>
-    </section>
+  <section class="navbar-start">
+  </section>
+  <section class="navbar-center">
+  </section>
+  <section class="navbar-end">
+    <details class="dropdown dropdown-end">
+      <summary class="btn btn-ghost rounded-xl!">
+        {{ request.user.username }}
+      </summary>
+      <ul class="dropdown-content menu rounded-sm bg-base-100 shadow-sm">
+        <li>
+          <a href="#">Profile</a>
+        </li>
+        <li>
+          <a href="{% url "settings-index" %}">Settings</a>
+        </li>
+        <li>
+          <button onclick="logoutDialog.showModal()">
+            Logout
+          </button>
+        </li>
+      </ul>
+    </details>
+  </section>
 </header>
 <c-logout-dialog />

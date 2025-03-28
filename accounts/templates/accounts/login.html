@@ -1,19 +1,17 @@
+{# vim: set filetype=htmldjango #}
 <c-layouts.base title="Login">
   <main class="flex justify-center items-center min-h-screen">
-    <div class="space-y-10 p-10 border rounded-lg shadow-md bg-neutral-content/25">
-        <h1 class="text-center text-2xl font-bold">
-            Login Page
-        </h1>
-        <django-formset endpoint="{{ request.path }}"
-                        csrf-token="{{ csrf_token }}"
-                        class="space-y-5">
-            {% render_form form "tailwind" form_classes="space-y-2.5 flex flex-col" %}
-            <button auto-disable
-                    type="button"
-                    df-click="disable -> submit -> proceed !~ scrollToError"
-                    class="btn btn-primary w-full">
-                Login
-            </button>
-        </django-formset>
-    </div></main>
+    <div class="space-y-5 p-10 border rounded-lg shadow-md bg-neutral-content/25">
+      <h1 class="text-center text-2xl font-bold">
+        Login Page
+      </h1>
+      <form action="{{ request.path }}" method="post" class="space-y-2.5">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">
+          Login
+        </button>
+      </form>
+    </div>
+  </main>
 </c-layouts.base>

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import sys
 from pathlib import Path
 
+import django
 from environs import Env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,15 +45,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.forms",
     "django_components",
     "django_cotton",
-    "django_expr",
     "django_tailwind_cli",
-    "formset",
     "debug_toolbar",
     "django_browser_reload",
     "accounts",
-    "settings",
 ]
 
 MIDDLEWARE = [
@@ -75,13 +74,14 @@ ROOT_URLCONF = "erp.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [
+            BASE_DIR / "templates",
+            django.__path__[0] + "/forms/templates",
+        ],
         "OPTIONS": {
             "builtins": [
                 "django.templatetags.static",
-                "django_expr.templatetags.expr",
                 "django_tailwind_cli.templatetags.tailwind_cli",
-                "formset.templatetags.formsetify",
                 "django_components.templatetags.component_tags",
             ],
             "context_processors": [
@@ -179,7 +179,10 @@ LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "accounts:login"
 
+FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
+
 COMPONENTS = {
+    "dirs": [BASE_DIR / "components"],
     "reload_on_file_change": True,
 }
 

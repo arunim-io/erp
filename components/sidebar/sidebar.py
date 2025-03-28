@@ -1,5 +1,5 @@
 from django.http import HttpRequest
-from django.urls import reverse
+from django.urls import reverse_lazy
 from django_components import Component, register
 
 
@@ -14,12 +14,12 @@ class Sidebar(Component):
                 {
                     "label": "Personal Information",
                     "icon_name": "mdi:user",
-                    "url": reverse("settings:user-info"),
+                    "url": reverse_lazy("user-info"),
                 },
                 {
                     "label": "Appearance",
                     "icon_name": "mdi:paintbrush",
-                    "url": reverse("settings:appearance"),
+                    "url": reverse_lazy("appearance"),
                 },
             ],
         }

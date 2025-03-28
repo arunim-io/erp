@@ -17,28 +17,30 @@ Including another URLconf
 
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
-from django.contrib.auth.decorators import login_not_required
 from django.urls import include, path
-from django.views.decorators.cache import cache_page
-from django.views.generic import TemplateView
-from django.views.i18n import JavaScriptCatalog
-
-js_catalog = login_not_required(
-    cache_page(3600)(
-        JavaScriptCatalog.as_view(
-            packages=["formset"],
-        ),
-    ),
-)
+from django.views.generic import RedirectView, TemplateView
 
 urlpatterns = [
     path("admin/docs/", include("django.contrib.admindocs.urls")),
     path("admin/", admin.site.urls),
-    path("jsi18n/", js_catalog, name="js-catalog"),
     path("__reload__/", include("django_browser_reload.urls")),
     path("", include("django_components.urls")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("accounts/", include("accounts.urls", namespace="accounts")),
-    path("settings/", include("settings.urls", namespace="settings")),
+    path(
+        "settings/",
+        RedirectView.as_view(pattern_name="user-info"),
+        name="settings-index",
+    ),
+    path(
+        "settings/appearance/",
+        TemplateView.as_view(template_name="settings/appearance.html"),
+        name="appearance",
+    ),
+    path(
+        "settings/user/",
+        TemplateView.as_view(template_name="settings/user_info.html"),
+        name="user-info",
+    ),
     *debug_toolbar_urls(),
 ]

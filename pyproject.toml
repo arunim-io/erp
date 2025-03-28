@@ -8,8 +8,6 @@ dependencies = [
   "django>=5.1.5",
   "django-components>=0.129",
   "django-cotton>=1.5.2",
-  "django-expr>=0.1.0",
-  "django-formset>=1.7.2",
   "django-tailwind-cli>=4",
   "environs[django]>=14.1.0",
 ]
