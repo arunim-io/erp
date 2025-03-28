@@ -10,6 +10,14 @@ _.file = ".env"
 _.path = ['{{config_root}}/node_modules/.bin']
 ERP_DEBUG = true
 
+[tasks]
+update = ["mise upgrade", "uv sync -U", "bun update"]
+dev = "uv run manage.py tailwind runserver"
+clean = "rm -rf node_modules .venv"
+
+[hooks]
+postinstall = ["uv sync", "bun install"]
+
 [settings]
 experimental = true
 python.uv_venv_auto = true
