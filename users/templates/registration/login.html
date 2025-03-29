@@ -7,7 +7,9 @@
       </h1>
       <form action="{{ request.path }}" method="post" class="space-y-2.5">
         {% csrf_token %}
-        {{ form }}
+        <c-form.input :field="form.username" />
+        <c-form.input :field="form.password" />
+        <c-form.checkbox :field="form.stay_logged_in" />
         <button type="submit">
           Login
         </button>
