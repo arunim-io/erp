@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     "django_tailwind_cli",
     "debug_toolbar",
     "django_browser_reload",
-    "accounts",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -175,9 +175,9 @@ INTERNAL_IPS = []
 if DEBUG:
     INTERNAL_IPS += ["127.0.0.1"]
 
-LOGIN_URL = "accounts:login"
+LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "accounts:login"
+LOGOUT_REDIRECT_URL = "users:login"
 
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
