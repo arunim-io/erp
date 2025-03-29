@@ -18,7 +18,7 @@ Including another URLconf
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic import RedirectView, TemplateView
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path("admin/docs/", include("django.contrib.admindocs.urls")),
@@ -27,20 +27,5 @@ urlpatterns = [
     path("", include("django_components.urls")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("users/", include("users.urls", namespace="users")),
-    path(
-        "settings/",
-        RedirectView.as_view(pattern_name="user-info"),
-        name="settings-index",
-    ),
-    path(
-        "settings/appearance/",
-        TemplateView.as_view(template_name="settings/appearance.html"),
-        name="appearance",
-    ),
-    path(
-        "settings/user/",
-        TemplateView.as_view(template_name="settings/user_info.html"),
-        name="user-info",
-    ),
     *debug_toolbar_urls(),
 ]
