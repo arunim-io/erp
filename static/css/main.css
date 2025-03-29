@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@plugin "@tailwindcss/forms";
-
 iconify-icon {
     @apply inline-block size-[1em];
 }
