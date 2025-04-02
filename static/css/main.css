@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@import "flowbite/src/themes/default";
+
+@plugin "flowbite/plugin";
+
+@source "../../node_modules/flowbite";
+
 iconify-icon {
     @apply inline-block size-[1em];
 }
