@@ -174,4 +174,5 @@ cython_debug/
 .pypirc
 
 static/dist
+static/vendor
 node_modules

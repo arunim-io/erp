@@ -160,9 +160,10 @@ STATICFILES_FINDERS = [
 
 STATIC_URL = "static/"
 
+STATIC_ROOT = BASE_DIR / "static/vendor"
+
 STATICFILES_DIRS = [
     BASE_DIR / "static/",
-    ("node_modules", BASE_DIR / "node_modules"),
 ]
 
 # Default primary key field type
