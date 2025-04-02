@@ -11,9 +11,11 @@ _.path = ['{{config_root}}/node_modules/.bin']
 ERP_DEBUG = true
 
 [tasks]
+manage = "uv run manage.py"
 update = ["mise upgrade", "uv sync -U", "bun update"]
-dev = "uv run manage.py tailwind runserver"
 clean = "rm -rf node_modules .venv"
+dev = "uv run manage.py tailwind runserver"
+bundle = "bun build ./static/src/main.ts --outdir ./static/dist --watch"
 
 [hooks]
 postinstall = ["uv sync", "bun install"]
