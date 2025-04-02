@@ -1,0 +1,8 @@
+version: "0.5"
+is_tui_disabled: true
+
+processes:
+  server:
+    command: "mise manage tailwind runserver"
+  bundler:
+    command: "mise bundle"

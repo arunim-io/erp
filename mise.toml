@@ -4,17 +4,17 @@ uv = "latest"
 ruff = "latest"
 "pipx:djlint" = "latest"
 bun = 'latest'
+"ubi:F1bonacc1/process-compose" = "latest"
 
 [env]
 _.file = ".env"
-_.path = ['{{config_root}}/node_modules/.bin']
 ERP_DEBUG = true
 
 [tasks]
-manage = "uv run manage.py"
 update = ["mise upgrade", "uv sync -U", "bun update"]
 clean = "rm -rf node_modules .venv"
-dev = "uv run manage.py tailwind runserver"
+manage = "uv run manage.py"
+dev = "process-compose"
 bundle = "bun build ./static/src/main.ts --outdir ./static/dist --watch"
 
 [hooks]
