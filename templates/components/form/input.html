@@ -1,4 +1,8 @@
 <div>
-  {{ field.label_tag }}
-  {{ field }}
+  <label for="{{ field.id_for_label }}">
+    {{ field.label }}
+  </label>
+  <input type="{{ field.widget_type }}"
+         class="{{ field.css_classes }}"
+         {% for key, value in field.field.widget.attrs.items %} {{ key }}={{ value }} {% endfor %} />
 </div>
