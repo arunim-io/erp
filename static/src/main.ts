@@ -1,7 +1,5 @@
 import "iconify-icon";
-import "flowbite/dist/flowbite";
 import Alpine from 'alpinejs';
-import { initFlowbite } from 'flowbite'
 
 declare global {
   interface Window {
@@ -9,8 +7,6 @@ declare global {
   }
 }
 
-window.Alpine = Alpine
+window.Alpine = Alpine;
 
-Alpine.start()
-
-initFlowbite()
+Alpine.start();
