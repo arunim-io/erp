@@ -1,8 +1,5 @@
 [tools]
-taplo = "latest"
 uv = "latest"
-ruff = "latest"
-"pipx:djlint" = "latest"
 bun = 'latest'
 "ubi:F1bonacc1/process-compose" = "latest"
 
@@ -16,6 +13,16 @@ clean = "rm -rf node_modules .venv"
 manage = "uv run manage.py"
 dev = "process-compose"
 bundle = "bun build ./static/src/main.ts --outdir ./static/dist --watch"
+format = { alias = "fmt", run = [
+  "ruff format -q .",
+  "taplo format .",
+  "djlint --reformat --quiet .",
+] }
+lint =  [
+  "ruff check --fix .",
+  "taplo lint .",
+  "djlint --lint ."
+]
 
 [hooks]
 postinstall = ["uv sync", "bun install"]
