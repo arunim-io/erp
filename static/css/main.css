@@ -123,5 +123,5 @@
 }
 
 iconify-icon {
-    @apply inline-block size-[1em];
+  @apply inline-block size-[1em];
 }

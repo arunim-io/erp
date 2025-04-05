@@ -28,4 +28,4 @@ dev = [
 typeCheckingMode = "basic"
 venvPath = "."
 venv = ".venv"
-exclude = [".venv"]
+exclude = [ ".venv" ]

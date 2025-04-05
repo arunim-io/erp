@@ -3,6 +3,6 @@ is_tui_disabled: true
 
 processes:
   server:
-    command: "mise manage tailwind runserver"
+    command: mise manage tailwind runserver
   bundler:
-    command: "mise bundle"
+    command: mise bundle

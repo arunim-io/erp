@@ -1,5 +1,5 @@
+import Alpine from "alpinejs";
 import "iconify-icon";
-import Alpine from 'alpinejs';
 
 declare global {
   interface Window {

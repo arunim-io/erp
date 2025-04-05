@@ -5,10 +5,15 @@ bun = 'latest'
 
 [env]
 _.file = ".env"
+
 ERP_DEBUG = true
 
 [tasks]
-update = ["mise upgrade", "uv sync -U", "bun update"]
+update = [
+  "mise upgrade",
+  "uv sync -U",
+  "bun update"
+]
 clean = "rm -rf node_modules .venv"
 manage = "uv run manage.py"
 dev = "process-compose"
@@ -18,15 +23,20 @@ format = { alias = "fmt", run = [
   "taplo format .",
   "djlint --reformat --quiet .",
 ] }
-lint =  [
+lint = [
   "ruff check --fix .",
   "taplo lint .",
-  "djlint --lint ."
+  "djlint --lint .",
+  "bun eslint . --fix"
 ]
 
 [hooks]
-postinstall = ["uv sync", "bun install"]
+postinstall = [
+  "uv sync",
+  "bun install"
+]
 
 [settings]
 experimental = true
+
 python.uv_venv_auto = true
