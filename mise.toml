@@ -1,3 +1,31 @@
 [tools]
 bun = "latest"
 uv = "latest"
+
+[tasks]
+update = ['uv sync --upgrade --directory ./backend/']
+manage = "uv run ./backend/manage.py"
+dev = ""
+lint = ["mise run lint_backend"]
+
+[tasks.format]
+alias = "fmt"
+run = ["mise run format_backend"]
+
+[tasks.format_backend]
+hide = true
+dir = "{{ config_root }}/backend/"
+run = "uv run ruff format ."
+
+[tasks.lint_backend]
+hide = true
+dir = "{{ config_root }}/backend/"
+run = "uv run ruff check ."
+
+[hooks]
+postinstall = ['uv sync --directory ./backend/']
+
+[settings]
+experimental = true
+python.uv_venv_auto = true
+pipx.uvx = true
