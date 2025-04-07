@@ -2,6 +2,10 @@
 version = "1.2.8"
 backend = "core:bun"
 
+[tools."ubi:F1bonacc1/process-compose"]
+version = "1.46.0"
+backend = "ubi:F1bonacc1/process-compose"
+
 [tools.uv]
 version = "0.6.12"
 backend = "aqua:astral-sh/uv"

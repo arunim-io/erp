@@ -1,0 +1,10 @@
+version: "0.5"
+is_tui_disabled: true
+
+processes:
+  server:
+    command: uv run manage.py runserver
+    working_dir: ./backend/
+  web:
+    command: bun dev
+    working_dir: ./web/

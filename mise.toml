@@ -1,6 +1,7 @@
 [tools]
 bun = "latest"
 uv = "latest"
+"ubi:F1bonacc1/process-compose" = "latest"
 
 [hooks]
 postinstall = ['uv sync --directory ./backend/', 'bun install --cwd=./web/']
@@ -8,7 +9,7 @@ postinstall = ['uv sync --directory ./backend/', 'bun install --cwd=./web/']
 [tasks]
 update = ['uv sync --upgrade --directory ./backend/', 'bun update --cwd=./web/']
 manage = "uv run ./backend/manage.py"
-dev = ""
+dev = "process-compose"
 lint = ["mise run lint_backend", "mise run lint_web"]
 
 [tasks.format]
