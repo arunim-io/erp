@@ -1,0 +1,8 @@
+{
+  "typeCheckingMode": "basic",
+  "venvPath": "./backend/",
+  "venv": "./backend/.venv",
+  "exclude": [
+    "./backend/.venv"
+  ]
+}
