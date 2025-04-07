@@ -2,6 +2,13 @@
 bun = "latest"
 uv = "latest"
 "ubi:F1bonacc1/process-compose" = "latest"
+age = "latest"
+sops = "latest"
+
+[env]
+_.file = ".env.json"
+DJANGO_DEBUG = true
+NODE_ENV = "{{ env.NODE_ENV | default(value='development') }}"
 
 [hooks]
 postinstall = ['uv sync --directory ./backend/', 'bun install --cwd=./web/']
@@ -11,6 +18,9 @@ update = ['uv sync --upgrade --directory ./backend/', 'bun update --cwd=./web/']
 manage = "uv run ./backend/manage.py"
 dev = "process-compose"
 lint = ["mise run lint_backend", "mise run lint_web"]
+generate_secret_key = "uv run --with django python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'"
+edit_secrets = "sops edit .env.json"
+
 
 [tasks.format]
 alias = "fmt"

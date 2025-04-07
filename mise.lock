@@ -1,6 +1,14 @@
+[tools.age]
+version = "1.2.1"
+backend = "aqua:FiloSottile/age"
+
 [tools.bun]
 version = "1.2.8"
 backend = "core:bun"
+
+[tools.sops]
+version = "3.10.1"
+backend = "aqua:getsops/sops"
 
 [tools."ubi:F1bonacc1/process-compose"]
 version = "1.46.0"
