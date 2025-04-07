@@ -2,11 +2,14 @@
 bun = "latest"
 uv = "latest"
 
+[hooks]
+postinstall = ['uv sync --directory ./backend/', 'bun install --cwd=./web/']
+
 [tasks]
-update = ['uv sync --upgrade --directory ./backend/']
+update = ['uv sync --upgrade --directory ./backend/', 'bun update --cwd=./web/']
 manage = "uv run ./backend/manage.py"
 dev = ""
-lint = ["mise run lint_backend"]
+lint = ["mise run lint_backend", "mise run lint_web"]
 
 [tasks.format]
 alias = "fmt"
@@ -22,8 +25,11 @@ hide = true
 dir = "{{ config_root }}/backend/"
 run = "uv run ruff check ."
 
-[hooks]
-postinstall = ['uv sync --directory ./backend/']
+
+[tasks.lint_web]
+hide = true
+dir = "{{ config_root }}/web/"
+run = "bun lint"
 
 [settings]
 experimental = true
