@@ -15,12 +15,14 @@ postinstall = ['uv sync --directory ./backend/', 'bun install --cwd=./web/']
 
 [tasks]
 update = ['uv sync --upgrade --directory ./backend/', 'bun update --cwd=./web/']
-manage = "uv run ./backend/manage.py"
 dev = "process-compose"
 lint = ["mise run lint_backend", "mise run lint_web"]
 generate_secret_key = "uv run --with django python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'"
 edit_secrets = "sops edit .env.json"
 
+[tasks.manage]
+run = "uv run ./manage.py"
+dir = "{{ config_root }}/backend"
 
 [tasks.format]
 alias = "fmt"
@@ -44,5 +46,4 @@ run = "bun lint"
 
 [settings]
 experimental = true
-python.uv_venv_auto = true
 pipx.uvx = true
