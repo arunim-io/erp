@@ -1,6 +1,6 @@
 target-version = "py313"
-extend-include = [ "./backend/**/*.py" ]
-extend-exclude = [ "**/migrations/*.py" ]
+extend-include = ["./backend/**/*.py"]
+extend-exclude = ["**/migrations/*.py"]
 
 [lint]
 select = [
@@ -60,13 +60,13 @@ select = [
   "RUF",
 ]
 ignore = [
-  "S101", # Use of assert detected https://docs.astral.sh/ruff/rules/assert/
+  "S101",   # Use of assert detected https://docs.astral.sh/ruff/rules/assert/
   "RUF012", # Mutable class attributes should be annotated with `typing.ClassVar`
   "SIM102", # sometimes it's better to nest
-  "UP038", # Checks for uses of isinstance/issubclass that take a tuple of types for comparison.
+  "UP038",  # Checks for uses of isinstance/issubclass that take a tuple of types for comparison.
   "COM812", # Conflicts with the formatter
 ]
-extend-unsafe-fixes = [ "UP038" ]
+extend-unsafe-fixes = ["UP038"]
 
 [lint.per-file-ignores]
-"**/settings.py" = [ "E501" ]
+"**/settings.py" = ["E501"]
