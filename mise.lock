@@ -3,8 +3,11 @@ version = "1.2.1"
 backend = "aqua:FiloSottile/age"
 
 [tools.bun]
-version = "1.2.8"
+version = "1.2.9"
 backend = "core:bun"
+
+[tools.bun.checksums]
+"bun-linux-x64-baseline.zip" = "sha256:f8f969281625dcde1abed7b405f0525909641674dcd0ea4060421747de30f6db"
 
 [tools.ruff]
 version = "0.11.4"
