@@ -1,6 +1,7 @@
-import antfu from "@antfu/eslint-config";
+import createConfig from "@antfu/eslint-config";
+import tanstackRouterPlugin from "@tanstack/eslint-plugin-router";
 
-export default antfu({
+export default createConfig({
   ignores: ["./backend/", ".env.json"],
   stylistic: {
     quotes: "double",
@@ -9,4 +10,4 @@ export default antfu({
   formatters: true,
   toml: false,
   react: true,
-});
+}, ...tanstackRouterPlugin.configs["flat/recommended"]);
